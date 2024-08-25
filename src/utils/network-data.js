@@ -1,4 +1,5 @@
-const BASE_URL = 'https://data-api.santrinj.my.id';
+// const BASE_URL = 'https://data-api.santrinj.my.id';
+const BASE_URL = 'http://localhost:3003';
 
 async function getSiswa() {
     try {
@@ -60,4 +61,18 @@ async function deleteSiswa(siswaId) {
   return data;
 }
 
-export { getSiswa, addSiswa, updateSiswa, deleteSiswa, getKriteria };
+async function getKegiatan() {
+  try {
+    const response = await fetch(`${BASE_URL}/kegiatan`);
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Fetch error:', error);
+    return [];
+  }
+}
+
+export { getSiswa, addSiswa, updateSiswa, deleteSiswa, getKriteria, getKegiatan };

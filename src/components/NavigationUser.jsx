@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
-function Navigation({ userRole }) {
+function NavigationUser({ userRole }) {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const location = useLocation();
 
@@ -48,23 +48,11 @@ function Navigation({ userRole }) {
                 >
                     <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                         <li>
-                            <Link to="/" className={getClassNames("/")} aria-current={location.pathname === "/" ? "page" : undefined} onClick={handleLinkClick}>Dashboard</Link>
-                        </li>
-                        <li>
-                            <Link to="/siswa" className={getClassNames("/siswa")} aria-current={location.pathname === "/siswa" ? "page" : undefined} onClick={handleLinkClick}>Siswa</Link>
-                        </li>
-                        <li>
-                            <Link to="/kriteria" className={getClassNames("/kriteria")} aria-current={location.pathname === "/kriteria" ? "page" : undefined} onClick={handleLinkClick}>Kriteria</Link>
-                        </li>
-                        <li>
-                            <Link to="/kegiatan" className={getClassNames("/kegiatan")} aria-current={location.pathname === "/kegiatan" ? "page" : undefined} onClick={handleLinkClick}>Kegiatan Ekstrakurikuler</Link>
-                        </li>
-                        {/* <li>
                             <Link to="/rekomendasi-siswa" className={getClassNames("/rekomendasi-siswa")} aria-current={location.pathname === "/rekomendasi-siswa" ? "page" : undefined} onClick={handleLinkClick}>Rekomendasi Siswa</Link>
                         </li>
                         <li>
                             <Link to="/data-diri" className={getClassNames("/data-diri")} aria-current={location.pathname === "/data-diri" ? "page" : undefined} onClick={handleLinkClick}>Data Diri</Link>
-                        </li> */}
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -72,4 +60,4 @@ function Navigation({ userRole }) {
     );
 }
 
-export default Navigation;
+export default NavigationUser;

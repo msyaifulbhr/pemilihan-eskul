@@ -17,9 +17,22 @@ function Kriteria() {
     const generatePDF = () => {
         const doc = new jsPDF();
 
-        doc.text('Daftar Kriteria', 14, 10);
+        const logo = "images/logobk.png"; // Ganti dengan Base64 string dari logo sekolahmu
+        doc.addImage(logo, 'PNG', 10, 10, 30, 30); // Posisi x, y, lebar, tinggi logo
+
+        // Menambahkan nama sekolah
+        doc.setFontSize(16);
+        doc.text("SMK Bunda Kandung", 50, 20); // Posisi x, y dari teks
+
+        // Menambahkan alamat sekolah
+        doc.setFontSize(12);
+        doc.text("Jl. Palapa Raya No. 3, Pasar Minggu, Jakarta Selatan", 50, 30);
+
+        // Garis di bawah kop surat
+        doc.line(10, 40, 200, 40); 
 
         doc.autoTable({
+            startY: 50,
             head: [['No', 'Nama Kriteria', 'Bobot']],
             body: kriteriaList.map((kriteria, index) => [
                 index + 1,
