@@ -1,5 +1,5 @@
-// const BASE_URL = 'https://data-api.santrinj.my.id';
-const BASE_URL = 'http://localhost:3003';
+const BASE_URL = 'https://data-api.santrinj.my.id';
+// const BASE_URL = 'http://localhost:3003';
 
 async function getSiswa() {
     try {
